@@ -3,14 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STATIC FORM | Clothing Store</title>
     
+    <!-- Dynamic SEO & Google Search Title -->
+    <title id="pageTitle">STATIC FORM</title>
+    <meta name="description" content="Refined British Apparel | Official Store">
+    
+    <!-- Open Graph / Google Snippet Customization -->
+    <meta property="og:title" content="Refined British Apparel | Official Store">
+    <meta property="og:site_name" content="STATIC FORM">
+
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Snipcart CSS and JavaScript -->
     <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.css" />
     <script async src="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.js"></script>
+
+    <script>
+        // Automatically adjust browser tab / search title based on device type
+        window.addEventListener('DOMContentLoaded', () => {
+            const isMobile = window.innerWidth <= 768; // Detects phones vs tablets/desktops
+            const titleElement = document.getElementById('pageTitle');
+            
+            if (isMobile) {
+                titleElement.textContent = "STATIC FORM Clothing";
+            } else {
+                titleElement.textContent = "Refined British Apparel | Official Store | STATIC FORM";
+            }
+        });
+    </script>
 
     <style>
         :root {
