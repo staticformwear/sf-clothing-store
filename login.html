@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account | STATIC FORM</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --text-color: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: #374151;
+            --error-color: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 440px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 40px 30px;
+            position: relative;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            font-size: 1.25rem;
+        }
+
+        .brand-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 35px;
+            text-transform: uppercase;
+        }
+
+        .brand-subtitle {
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            margin-top: -30px;
+            margin-bottom: 35px;
+            text-transform: uppercase;
+        }
+
+        .form-view {
+            display: none;
+        }
+
+        .form-view.active {
+            display: block;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .input-field {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border-color);
+            padding: 10px 0;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-field:focus {
+            border-color: #ffffff;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .password-toggle svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+        }
+
+        .error-msg {
+            color: var(--error-color);
+            font-size: 0.75rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .forgot-link-container {
+            text-align: right;
+            margin-bottom: 25px;
+        }
+
+        .forgot-link {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .forgot-link:hover {
+            color: #ffffff;
+        }
+
+        .btn-primary {
+            width: 100%;
+            background-color: #ffffff;
+            color: #0b0f19;
+            border: none;
+            padding: 14px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-secondary {
+            width: 100%;
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 14px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 20px 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .checkbox-container input {
+            margin-top: 3px;
+            accent-color: #ffffff;
+        }
+
+        .switch-auth-text {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 0.85rem;
+        }
+
+        .switch-auth-text button {
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .back-home {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .back-home a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-container">
+        <button class="close-btn" onclick="window.location.href='index.html'">✕</button>
+
+        <!-- Login View -->
+        <div id="login-view" class="form-view active">
+            <div class="brand-title">STATIC FORM</div>
+            <div class="brand-subtitle">Member Access</div>
+            
+            <form onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <label>Email address</label>
+                    <input type="email" class="input-field" required placeholder="name@example.com">
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="login-password" class="input-field" required placeholder="••••••••••••">
+                    <button type="button" class="password-toggle" onclick="togglePassword('login-password')">
+                        <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </button>
+                </div>
+
+                <div class="forgot-link-container">
+                    <button type="button" class="forgot-link" onclick="switchView('recover-view')">Forgot your password?</button>
+                </div>
+
+                <button type="submit" class="btn-primary">Sign in</button>
+                <button type="button" class="btn-secondary" onclick="switchView('register-view')">Create an account</button>
+            </form>
+        </div>
+
+        <!-- Recover Password View -->
+        <div id="recover-view" class="form-view">
+            <div class="brand-title" style="font-size: 1.25rem; margin-bottom: 10px;">Recover your</div>
+            <div class="brand-title" style="font-size: 1.5rem; margin-bottom: 35px;">Password</div>
+
+            <form onsubmit="handleRecover(event)">
+                <div class="input-group">
+                    <label>Your email address</label>
+                    <input type="email" class="input-field" required placeholder="name@example.com">
+                </div>
+
+                <button type="submit" class="btn-primary">Send reset email</button>
+                <button type="button" class="btn-secondary" onclick="switchView('login-view')">Cancel</button>
+            </form>
+        </div>
+
+        <!-- Register View -->
+        <div id="register-view" class="form-view">
+            <div class="brand-title" style="font-size: 1.1rem; text-align: left; margin-bottom: 25px;">1 / 2 &nbsp;&nbsp; Details</div>
+
+            <form onsubmit="handleRegister(event)">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" class="input-field" required placeholder="Your email address">
+                </div>
+
+                <div class="input-group">
+                    <label>First name</label>
+                    <input type="text" class="input-field" required placeholder="Your first name">
+                </div>
+
+                <div class="input-group">
+                    <label>Last name</label>
+                    <input type="text" class="input-field" required placeholder="Your last name">
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="reg-password" class="input-field" required placeholder="Choose password">
+                    <button type="button" class="password-toggle" onclick="togglePassword('reg-password')">
+                        <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </button>
+                    <div id="password-error" class="error-msg">Password must be at least 12 characters long.</div>
+                </div>
+
+                <label class="checkbox-container">
+                    <input type="checkbox">
+                    <span>Please tick here if you do not wish to receive marketing updates, product drops, and promotional offers.</span>
+                </label>
+
+                <button type="submit" class="btn-primary">Create Account</button>
+
+                <div class="switch-auth-text">
+                    <button type="button" onclick="switchView('login-view')">Already got an account? Login here</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="back-home">
+            <a href="index.html">Explore Store</a>
+        </div>
+    </div>
+
+    <script>
+        function switchView(viewId) {
+            document.querySelectorAll('.form-view').forEach(view => {
+                view.classList.remove('active');
+            });
+            document.getElementById(viewId).classList.add('active');
+        }
+
+        function togglePassword(fieldId) {
+            const input = document.getElementById(fieldId);
+            input.type = input.type === "password" ? "text" : "password";
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            alert("Signed in successfully!");
+            window.location.href = "index.html";
+        }
+
+        function handleRecover(event) {
+            event.preventDefault();
+            alert("Password reset email sent if account exists.");
+            switchView('login-view');
+        }
+
+        function handleRegister(event) {
+            event.preventDefault();
+            const password = document.getElementById('reg-password').value;
+            const errorDiv = document.getElementById('password-error');
+
+            if (password.length < 12) {
+                errorDiv.style.display = 'block';
+                return;
+            }
+
+            errorDiv.style.display = 'none';
+            alert("Account created successfully!");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
