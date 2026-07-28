@@ -241,7 +241,7 @@ header {
     color: var(--text-muted);
 }
 
-/* Accordion Submenus */
+/* Accordion Submenus inside panels */
 .accordion-header {
     display: flex;
     justify-content: space-between;
@@ -251,6 +251,12 @@ header {
     font-weight: 600;
     border-bottom: 1px solid var(--border-color);
     cursor: pointer;
+    color: var(--text-color);
+}
+
+.accordion-header span.arrow {
+    font-size: 1rem;
+    color: var(--text-muted);
 }
 
 .accordion-content {
@@ -266,10 +272,11 @@ header {
 
 .accordion-content li {
     padding: 12px 0 12px 15px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 400;
     color: var(--text-muted);
     border-bottom: none;
+    cursor: pointer;
 }
 
 .accordion-content li:hover {
