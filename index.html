@@ -248,18 +248,6 @@
             color: var(--text-muted);
         }
 
-        /* Submenus style with smaller text matching root items */
-        .menu-list.sub-items li {
-            font-weight: 400;
-            font-size: 1rem;
-            color: var(--text-muted);
-            justify-content: flex-start;
-        }
-        
-        .menu-list.sub-items li:hover {
-            color: var(--text-color);
-        }
-
         /* Accordion Submenus inside panels */
         .accordion-header {
             display: flex;
@@ -270,6 +258,12 @@
             font-weight: 600;
             border-bottom: 1px solid var(--border-color);
             cursor: pointer;
+            color: var(--text-color);
+        }
+
+        .accordion-header span.arrow {
+            font-size: 1rem;
+            color: var(--text-muted);
         }
 
         .accordion-content {
@@ -285,10 +279,11 @@
 
         .accordion-content li {
             padding: 12px 0 12px 15px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 400;
             color: var(--text-muted);
             border-bottom: none;
+            cursor: pointer;
         }
 
         .accordion-content li:hover {
@@ -469,11 +464,6 @@
                 <ul class="menu-list">
                     <li class="has-sub" data-target="shopStaticPanel">Shop STATIC FORM <span class="arrow">&gt;</span></li>
                     <li class="has-sub" data-target="shopActivewearPanel">Shop FORM87 ACTIVEWEAR <span class="arrow">&gt;</span></li>
-                    <li>Prestige Loyalty</li>
-                    <li>Outfits</li>
-                    <li>Behind the Brand</li>
-                    <li>Lookbooks</li>
-                    <li>Client Services <span class="arrow">&gt;</span></li>
                 </ul>
             </div>
 
@@ -485,38 +475,66 @@
                 </div>
                 
                 <!-- Clothing Accordion -->
-                <div class="accordion-header" onclick="toggleAccordion('clothingAccordion')">
+                <div class="accordion-header" onclick="toggleAccordion('staticClothing')">
                     <span>Clothing</span>
-                    <span class="arrow" id="clothingAccordionArrow">&gt;</span>
+                    <span class="arrow" id="staticClothingArrow">&gt;</span>
                 </div>
-                <ul class="accordion-content" id="clothingAccordion">
+                <ul class="accordion-content" id="staticClothing">
                     <li>All</li>
-                    <li>T-Shirts & Tanks</li>
-                    <li>Shorts</li>
                     <li>Hoodies</li>
                     <li>Pants</li>
-                    <li>Outerwear</li>
+                    <li>T-Shirts</li>
+                    <li>Shorts</li>
+                    <li>Sweatpants</li>
+                    <li>Denim</li>
+                    <li>Sweatshirts</li>
+                    <li>Shirts</li>
                 </ul>
 
                 <!-- Collections Accordion -->
-                <div class="accordion-header" onclick="toggleAccordion('collectionsAccordion')">
+                <div class="accordion-header" onclick="toggleAccordion('staticCollections')">
                     <span>Collections</span>
-                    <span class="arrow" id="collectionsAccordionArrow">&gt;</span>
+                    <span class="arrow" id="staticCollectionsArrow">&gt;</span>
                 </div>
-                <ul class="accordion-content" id="collectionsAccordion">
-                    <li>Team FORM87</li>
-                    <li>FORM87 Winter ‘25</li>
-                    <li>FORM87 Summer ‘26</li>
-                    <li>FORM87 Spring ‘26</li>
-                    <li>FORM87 Fall ‘25</li>
+                <ul class="accordion-content" id="staticCollections">
+                    <li>Legacy Club</li>
+                    <li>Core Club</li>
+                    <li>LonDon</li>
                     <li>Women’s</li>
                 </ul>
 
-                <!-- Direct links for Accessories, Footwear, Outfits -->
-                <ul class="menu-list" style="border-top: none;">
-                    <li>Accessories <span class="arrow">&gt;</span></li>
-                    <li>Footwear <span class="arrow">&gt;</span></li>
-                    <li>Outfits <span class="arrow">&gt;</span></li>
+                <!-- Accessories Accordion -->
+                <div class="accordion-header" onclick="toggleAccordion('staticAccessories')">
+                    <span>Accessories</span>
+                    <span class="arrow" id="staticAccessoriesArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="staticAccessories">
+                    <li>All</li>
+                    <li>Caps</li>
+                    <li>Belts</li>
+                    <li>Socks</li>
+                    <li>Sunglasses</li>
+                </ul>
+
+                <!-- Footwear Accordion -->
+                <div class="accordion-header" onclick="toggleAccordion('staticFootwear')">
+                    <span>Footwear</span>
+                    <span class="arrow" id="staticFootwearArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="staticFootwear">
+                    <li>All Footwear</li>
+                    <li>Sneakers</li>
+                    <li>Slides</li>
+                </ul>
+
+                <!-- Outfits Accordion -->
+                <div class="accordion-header" onclick="toggleAccordion('staticOutfits')">
+                    <span>Outfits</span>
+                    <span class="arrow" id="staticOutfitsArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="staticOutfits">
+                    <li>All Outfits</li>
+                    <li>Curated Looks</li>
                 </ul>
             </div>
 
@@ -527,24 +545,26 @@
                     <button class="close-btn" onclick="toggleMenu()">&times;</button>
                 </div>
                 
-                <div class="accordion-header" onclick="toggleAccordion('activewearClothingAccordion')">
+                <!-- Clothing Accordion -->
+                <div class="accordion-header" onclick="toggleAccordion('activewearClothing')">
                     <span>Clothing</span>
-                    <span class="arrow" id="activewearClothingAccordionArrow">&gt;</span>
+                    <span class="arrow" id="activewearClothingArrow">&gt;</span>
                 </div>
-                <ul class="accordion-content" id="activewearClothingAccordion">
+                <ul class="accordion-content" id="activewearClothing">
                     <li>All</li>
-                    <li>T-Shirts & Tanks</li>
-                    <li>Shorts</li>
+                    <li>T-Shirts</li>
                     <li>Hoodies</li>
+                    <li>Shorts</li>
                     <li>Pants</li>
                     <li>Outerwear</li>
                 </ul>
 
-                <div class="accordion-header" onclick="toggleAccordion('activewearCollectionsAccordion')">
+                <!-- Collections Accordion -->
+                <div class="accordion-header" onclick="toggleAccordion('activewearCollections')">
                     <span>Collections</span>
-                    <span class="arrow" id="activewearCollectionsAccordionArrow">&gt;</span>
+                    <span class="arrow" id="activewearCollectionsArrow">&gt;</span>
                 </div>
-                <ul class="accordion-content" id="activewearCollectionsAccordion">
+                <ul class="accordion-content" id="activewearCollections">
                     <li>Team FORM87</li>
                     <li>FORM87 Winter ‘25</li>
                     <li>FORM87 Summer ‘26</li>
@@ -553,10 +573,31 @@
                     <li>Women’s</li>
                 </ul>
 
-                <ul class="menu-list" style="border-top: none;">
-                    <li>Accessories <span class="arrow">&gt;</span></li>
-                    <li>Footwear <span class="arrow">&gt;</span></li>
-                    <li>Outfits <span class="arrow">&gt;</span></li>
+                <!-- Accessories Accordion -->
+                <div class="accordion-header" onclick="toggleAccordion('activewearAccessories')">
+                    <span>Accessories</span>
+                    <span class="arrow" id="activewearAccessoriesArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="activewearAccessories">
+                    <li>All Accessories</li>
+                </ul>
+
+                <!-- Footwear Accordion -->
+                <div class="accordion-header" onclick="toggleAccordion('activewearFootwear')">
+                    <span>Footwear</span>
+                    <span class="arrow" id="activewearFootwearArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="activewearFootwear">
+                    <li>All Footwear</li>
+                </ul>
+
+                <!-- Outfits Accordion -->
+                <div class="accordion-header" onclick="toggleAccordion('activewearOutfits')">
+                    <span>Outfits</span>
+                    <span class="arrow" id="activewearOutfitsArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="activewearOutfits">
+                    <li>All Outfits</li>
                 </ul>
             </div>
 
