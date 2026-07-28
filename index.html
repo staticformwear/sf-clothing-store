@@ -408,14 +408,88 @@
             margin-bottom: 15px;
         }
 
-        footer {
-            text-align: center;
-            padding: 40px;
+        /* Footer Styles */
+        .site-footer {
             border-top: 1px solid var(--border-color);
+            padding: 40px 30px;
+            background-color: var(--bg-color);
             color: var(--text-muted);
-            font-size: 0.8rem;
+        }
+
+        .footer-accordions {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+
+        .footer-section {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .footer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
+        }
+
+        .footer-toggle {
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .footer-content {
+            display: none;
+            list-style: none;
+            padding-bottom: 16px;
+        }
+
+        .footer-content.active {
+            display: block;
+        }
+
+        .footer-content li {
+            padding: 8px 0;
+        }
+
+        .footer-content li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .footer-content li a:hover {
+            color: var(--text-color);
+        }
+
+        .footer-legal {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px 25px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+        }
+
+        .footer-legal a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover {
+            color: var(--text-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -667,8 +741,64 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Static Form Wear. All Rights Reserved.</p>
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-accordions">
+            <!-- Customer Care Section -->
+            <div class="footer-section">
+                <div class="footer-header" onclick="toggleFooterAccordion('customerCare', 'customerCareArrow')">
+                    <span>Customer Care</span>
+                    <span class="footer-toggle" id="customerCareArrow">+</span>
+                </div>
+                <ul class="footer-content" id="customerCare">
+                    <li><a href="#track-order">Track Order</a></li>
+                    <li><a href="#return">Make A Return</a></li>
+                    <li><a href="#student-discount">Student Discount</a></li>
+                </ul>
+            </div>
+
+            <!-- Brand Section -->
+            <div class="footer-section">
+                <div class="footer-header" onclick="toggleFooterAccordion('brandSection', 'brandArrow')">
+                    <span>Brand</span>
+                    <span class="footer-toggle" id="brandArrow">+</span>
+                </div>
+                <ul class="footer-content" id="brandSection">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#shipping">Shipping & Returns</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Section -->
+            <div class="footer-section">
+                <div class="footer-header" onclick="toggleFooterAccordion('socialSection', 'socialArrow')">
+                    <span>Social</span>
+                    <span class="footer-toggle" id="socialArrow">+</span>
+                </div>
+                <ul class="footer-content" id="socialSection">
+                    <li><a href="#instagram">Instagram</a></li>
+                    <li><a href="#tiktok">TikTok</a></li>
+                    <li><a href="#youtube">YouTube</a></li>
+                    <li><a href="#x">X</a></li>
+                    <li><a href="#facebook">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Legal Links -->
+        <div class="footer-legal">
+            <a href="#terms">Terms & Conditions</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#shipping-policy">Shipping & Returns Policy</a>
+            <a href="#cookie-policy">Cookie Policy</a>
+            <a href="#cookie-preferences">Cookie Preferences</a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 STATIC FORM. ALL RIGHTS RESERVED.</p>
+        </div>
     </footer>
 
     <script>
@@ -694,6 +824,17 @@
                 arrow.textContent = 'v';
             } else {
                 arrow.textContent = '>';
+            }
+        }
+
+        function toggleFooterAccordion(contentId, arrowId) {
+            const content = document.getElementById(contentId);
+            const arrow = document.getElementById(arrowId);
+            content.classList.toggle('active');
+            if (content.classList.contains('active')) {
+                arrow.textContent = '-';
+            } else {
+                arrow.textContent = '+';
             }
         }
 
