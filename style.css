@@ -33,7 +33,6 @@ header {
     z-index: 1000;
 }
 
-/* Left Side: Hamburger Menu & Main Nav Links */
 .nav-left {
     display: flex;
     align-items: center;
@@ -49,7 +48,6 @@ header {
     border: none;
 }
 
-/* Default mobile: 2 dashes */
 .hamburger span {
     width: 24px;
     height: 2px;
@@ -57,17 +55,15 @@ header {
     transition: 0.3s;
 }
 .hamburger span:nth-child(3) {
-    display: none; /* hidden on mobile for 2 dashes */
+    display: none;
 }
 
-/* Desktop & Tablet: 3 dashes */
 @media (min-width: 768px) {
     .hamburger span:nth-child(3) {
         display: block;
     }
 }
 
-/* Desktop Nav Links */
 .desktop-nav {
     display: none;
     gap: 20px;
@@ -88,7 +84,6 @@ header {
     color: var(--accent-color);
 }
 
-/* Center: Logo */
 .logo-container {
     text-align: center;
     justify-self: center;
@@ -104,7 +99,6 @@ header {
     background: transparent;
 }
 
-/* Right Side: Icons */
 .nav-right {
     display: flex;
     align-items: center;
@@ -143,7 +137,7 @@ header {
     border-radius: 50%;
 }
 
-/* Multi-Level Slide-Out Mobile Menu Overlay */
+/* Slide-Out Mobile Menu Overlay */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -194,7 +188,7 @@ header {
 .back-btn {
     background: none;
     border: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-color);
     cursor: pointer;
@@ -242,18 +236,43 @@ header {
     text-decoration: none;
 }
 
-.menu-list li span {
-    color: var(--text-muted);
-}
-
-.menu-list.sub-items li {
-    font-weight: 400;
+.menu-list li span.arrow {
     font-size: 1rem;
     color: var(--text-muted);
-    justify-content: flex-start;
 }
 
-.menu-list.sub-items li:hover {
+/* Accordion Submenus */
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+.accordion-content {
+    display: none;
+    padding-left: 0;
+    list-style: none;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.accordion-content.active {
+    display: block;
+}
+
+.accordion-content li {
+    padding: 12px 0 12px 15px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    border-bottom: none;
+}
+
+.accordion-content li:hover {
     color: var(--text-color);
 }
 
@@ -315,7 +334,6 @@ header {
     opacity: 0.85;
 }
 
-/* Products Grid Section */
 .products-section {
     max-width: 1400px;
     margin: 0 auto;
@@ -368,7 +386,6 @@ header {
     font-size: 0.9rem;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 40px;
