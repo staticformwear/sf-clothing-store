@@ -35,12 +35,11 @@
 
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: #111827;
-            --text-color: #f3f4f6;
-            --text-muted: #9ca3af;
-            --accent-color: #3b82f6;
-            --border-color: #1f2937;
+            --bg-color: #ffffff;
+            --card-bg: #ffffff;
+            --text-color: #000000;
+            --text-muted: #737373;
+            --border-color: #e5e5e5;
         }
 
         * {
@@ -117,7 +116,7 @@
             font-weight: 500;
         }
         .desktop-nav a:hover {
-            color: var(--accent-color);
+            opacity: 0.7;
         }
 
         .logo-container {
@@ -128,7 +127,7 @@
         .logo {
             font-size: 1.25rem;
             font-weight: 900;
-            color: #ffffff;
+            color: #000000;
             letter-spacing: 3px;
             text-transform: uppercase;
             text-decoration: none;
@@ -165,8 +164,8 @@
             position: absolute;
             top: -6px;
             right: -8px;
-            background-color: #ffffff;
-            color: #0b0f19;
+            background-color: #000000;
+            color: #ffffff;
             font-size: 0.65rem;
             font-weight: bold;
             padding: 1px 4px;
@@ -180,7 +179,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: var(--card-bg);
+            background-color: #ffffff;
             z-index: 9999;
             display: none;
             overflow-y: auto;
@@ -211,6 +210,7 @@
             margin-bottom: 25px;
             font-size: 1.1rem;
             font-weight: 600;
+            color: #000000;
         }
 
         .close-btn {
@@ -322,12 +322,12 @@
         /* Hero Section */
         .hero {
             position: relative;
-            height: 100vh; /* Updated to match full viewport height */
+            height: 100vh;
             display: flex;
             align-items: flex-end;
             padding: 60px 30px;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('71DEEC17-D91D-4BCD-9920-1263A9C59037.png') center/cover no-repeat;
-            background-color: #161b22;
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('71DEEC17-D91D-4BCD-9920-1263A9C59037.png') center/cover no-repeat;
+            background-color: #f0f0f0;
         }
 
         .hero-content {
@@ -338,7 +338,7 @@
             font-size: 0.9rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--text-muted);
+            color: #ffffff;
             margin-bottom: 10px;
         }
 
@@ -355,12 +355,12 @@
             gap: 15px;
         }
 
-    	.btn {
+        .btn {
             display: inline-block;
             background-color: #ffffff;
-            color: #0b0f19;
+            color: #000000;
             padding: 12px 28px;
-            border-radius: 2px;
+            border-radius: 0;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
@@ -379,64 +379,97 @@
             opacity: 0.85;
         }
 
+        /* Horizontal Scrolling Product Carousel (Represent Style) */
         .products-section {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 60px 20px;
+            padding: 50px 0 80px 0;
+            width: 100%;
+            background-color: #ffffff;
         }
 
-        .products-section h2 {
-            font-size: 1.5rem;
-            color: #ffffff;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .product-carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 16px;
+            padding: 0 30px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* Hide scrollbar for clean look */
         }
 
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+        .product-carousel::-webkit-scrollbar {
+            display: none;
         }
 
         .product-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            overflow: hidden;
-            padding: 15px;
+            flex: 0 0 300px;
+            scroll-snap-align: start;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
         }
 
-        .product-placeholder {
+        .product-image-container {
             width: 100%;
-            height: 350px;
-            background-color: #1f2937;
-            border-radius: 2px;
+            height: 400px;
+            background-color: #f4f4f4;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-muted);
-            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .product-placeholder {
+            color: #888888;
             font-size: 0.85rem;
         }
 
-        .product-card h3 {
-            font-size: 1rem;
-            color: #ffffff;
-            margin-bottom: 5px;
+        .product-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0 2px;
         }
 
-        .product-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
+        .product-info h3 {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #000000;
+            margin-bottom: 3px;
+        }
+
+        .product-info .price {
+            font-size: 0.85rem;
+            color: #000000;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .product-info .colors {
+            font-size: 0.75rem;
+            color: #737373;
+        }
+
+        .btn-quick-add {
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            font-weight: 300;
+            cursor: pointer;
+            color: #000000;
+            padding: 0 5px;
+            line-height: 1;
+        }
+        .btn-quick-add:hover {
+            opacity: 0.6;
         }
 
         /* Footer Styles */
         .site-footer {
             border-top: 1px solid var(--border-color);
             padding: 40px 30px;
-            background-color: var(--bg-color);
+            background-color: #ffffff;
             color: var(--text-muted);
         }
 
@@ -456,7 +489,7 @@
             padding: 16px 0;
             font-size: 1rem;
             font-weight: 600;
-            color: var(--text-color);
+            color: #000000;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -488,7 +521,7 @@
         }
 
         .footer-content li a:hover {
-            color: var(--text-color);
+            color: #000000;
         }
 
         .footer-legal {
@@ -506,7 +539,7 @@
         }
 
         .footer-legal a:hover {
-            color: var(--text-color);
+            color: #000000;
         }
 
         .footer-bottom {
@@ -514,6 +547,7 @@
             font-size: 0.75rem;
             letter-spacing: 1px;
             text-transform: uppercase;
+            color: #737373;
         }
     </style>
 </head>
@@ -726,41 +760,144 @@
         </div>
     </section>
 
+    <!-- Represent-Style Horizontal Scroll Section (8 Items, No Title) -->
     <section class="products-section" id="shop">
-        <h2>Featured Drops</h2>
-        <div class="product-grid">
+        <div class="product-carousel">
+            <!-- Item 1 -->
             <div class="product-card">
-                <div class="product-placeholder">Tapstitch Product Integration</div>
-                <h3>Vintage Washed Hoodie</h3>
-                <p>$145.00</p>
-                <!-- Snipcart Add to Cart Button -->
-                <button class="btn snipcart-add-item" 
-                    data-item-id="vintage-washed-hoodie" 
-                    data-item-price="145.00" 
-                    data-item-name="Vintage Washed Hoodie"
-                    style="width: 100%;">Add to Cart</button>
+                <div class="product-image-container">
+                    <div class="product-placeholder">Tapstitch Product</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Vintage Washed Hoodie</h3>
+                        <p class="price">$145.00</p>
+                        <p class="colors">2 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="vintage-washed-hoodie" 
+                        data-item-price="145.00" 
+                        data-item-name="Vintage Washed Hoodie">+</button>
+                </div>
             </div>
+            <!-- Item 2 -->
             <div class="product-card">
-                <div class="product-placeholder">Tapstitch Product Integration</div>
-                <h3>Heavyweight Graphic Tee</h3>
-                <p>$75.00</p>
-                <!-- Snipcart Add to Cart Button -->
-                <button class="btn snipcart-add-item" 
-                    data-item-id="heavyweight-graphic-tee" 
-                    data-item-price="75.00" 
-                    data-item-name="Heavyweight Graphic Tee"
-                    style="width: 100%;">Add to Cart</button>
+                <div class="product-image-container">
+                    <div class="product-placeholder">Tapstitch Product</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Heavyweight Graphic Tee</h3>
+                        <p class="price">$75.00</p>
+                        <p class="colors">1 Colour</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="heavyweight-graphic-tee" 
+                        data-item-price="75.00" 
+                        data-item-name="Heavyweight Graphic Tee">+</button>
+                </div>
             </div>
+            <!-- Item 3 -->
             <div class="product-card">
-                <div class="product-placeholder">Tapstitch Product Integration</div>
-                <h3>Raw Denim Shorts</h3>
-                <p>$115.00</p>
-                <!-- Snipcart Add to Cart Button -->
-                <button class="btn snipcart-add-item" 
-                    data-item-id="raw-denim-shorts" 
-                    data-item-price="115.00" 
-                    data-item-name="Raw Denim Shorts"
-                    style="width: 100%;">Add to Cart</button>
+                <div class="product-image-container">
+                    <div class="product-placeholder">Tapstitch Product</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Raw Denim Shorts</h3>
+                        <p class="price">$115.00</p>
+                        <p class="colors">2 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="raw-denim-shorts" 
+                        data-item-price="115.00" 
+                        data-item-name="Raw Denim Shorts">+</button>
+                </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <div class="product-placeholder">Tapstitch Product</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Relaxed Fit Sweatpants</h3>
+                        <p class="price">$130.00</p>
+                        <p class="colors">3 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="relaxed-sweatpants" 
+                        data-item-price="130.00" 
+                        data-item-name="Relaxed Fit Sweatpants">+</button>
+                </div>
+            </div>
+            <!-- Item 5 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <div class="product-placeholder">Tapstitch Product</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Oversized Knit Sweater</h3>
+                        <p class="price">$160.00</p>
+                        <p class="colors">2 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="oversized-knit-sweater" 
+                        data-item-price="160.00" 
+                        data-item-name="Oversized Knit Sweater">+</button>
+                </div>
+            </div>
+            <!-- Item 6 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <div class="product-placeholder">Tapstitch Product</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Nylon Zip Pullover</h3>
+                        <p class="price">$170.00</p>
+                        <p class="colors">1 Colour</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="nylon-zip-pullover" 
+                        data-item-price="170.00" 
+                        data-item-name="Nylon Zip Pullover">+</button>
+                </div>
+            </div>
+            <!-- Item 7 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <div class="product-placeholder">Tapstitch Product</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Distressed Leather Belt</h3>
+                        <p class="price">$95.00</p>
+                        <p class="colors">1 Colour</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="distressed-leather-belt" 
+                        data-item-price="95.00" 
+                        data-item-name="Distressed Leather Belt">+</button>
+                </div>
+            </div>
+            <!-- Item 8 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <div class="product-placeholder">Tapstitch Product</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Signature Baseball Cap</h3>
+                        <p class="price">$65.00</p>
+                        <p class="colors">4 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="signature-baseball-cap" 
+                        data-item-price="65.00" 
+                        data-item-name="Signature Baseball Cap">+</button>
+                </div>
             </div>
         </div>
     </section>
