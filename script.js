@@ -17,7 +17,7 @@ function switchPanel(panelId) {
     }
 }
 
-// Toggle accordion submenus and arrows
+// Toggle accordion submenus and update arrows
 function toggleAccordion(id) {
     const content = document.getElementById(id);
     const arrow = document.getElementById(id + 'Arrow');
