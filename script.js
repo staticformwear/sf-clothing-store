@@ -17,6 +17,18 @@ function switchPanel(panelId) {
     }
 }
 
+// Toggle accordion submenus and arrows
+function toggleAccordion(id) {
+    const content = document.getElementById(id);
+    const arrow = document.getElementById(id + 'Arrow');
+    content.classList.toggle('active');
+    if (content.classList.contains('active')) {
+        arrow.textContent = 'v';
+    } else {
+        arrow.textContent = '>';
+    }
+}
+
 // Initialize event listeners when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     const clickableItems = document.querySelectorAll('.has-sub');
