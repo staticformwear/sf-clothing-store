@@ -443,6 +443,34 @@ header {
     opacity: 0.6;
 }
 
+/* Category Page Grid Layout */
+.category-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.category-title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 8px;
+}
+
+@media (min-width: 768px) {
+    .category-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 /* Footer Styles */
 .site-footer {
     border-top: 1px solid var(--border-color);
