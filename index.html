@@ -40,7 +40,6 @@
             z-index: 1000;
         }
 
-        /* Left Side: Hamburger Menu & Main Nav Links */
         .nav-left {
             display: flex;
             align-items: center;
@@ -56,7 +55,6 @@
             border: none;
         }
 
-        /* Default mobile: 2 dashes */
         .hamburger span {
             width: 24px;
             height: 2px;
@@ -64,17 +62,15 @@
             transition: 0.3s;
         }
         .hamburger span:nth-child(3) {
-            display: none; /* hidden on mobile for 2 dashes */
+            display: none;
         }
 
-        /* Desktop & Tablet: 3 dashes */
         @media (min-width: 768px) {
             .hamburger span:nth-child(3) {
                 display: block;
             }
         }
 
-        /* Desktop Nav Links */
         .desktop-nav {
             display: none;
             gap: 20px;
@@ -95,7 +91,6 @@
             color: var(--accent-color);
         }
 
-        /* Center: Logo */
         .logo-container {
             text-align: center;
             justify-self: center;
@@ -111,7 +106,6 @@
             background: transparent;
         }
 
-        /* Right Side: Icons */
         .nav-right {
             display: flex;
             align-items: center;
@@ -150,7 +144,7 @@
             border-radius: 50%;
         }
 
-        /* Multi-Level Slide-Out Mobile Menu Overlay */
+        /* Slide-Out Mobile Menu Overlay */
         .menu-overlay {
             position: fixed;
             top: 0;
@@ -201,7 +195,7 @@
         .back-btn {
             background: none;
             border: none;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
             color: var(--text-color);
             cursor: pointer;
@@ -249,10 +243,12 @@
             text-decoration: none;
         }
 
-        .menu-list li span {
+        .menu-list li span.arrow {
+            font-size: 1rem;
             color: var(--text-muted);
         }
 
+        /* Submenus style with smaller text matching root items */
         .menu-list.sub-items li {
             font-weight: 400;
             font-size: 1rem;
@@ -261,6 +257,41 @@
         }
         
         .menu-list.sub-items li:hover {
+            color: var(--text-color);
+        }
+
+        /* Accordion Submenus inside panels */
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .accordion-content {
+            display: none;
+            padding-left: 0;
+            list-style: none;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        .accordion-content li {
+            padding: 12px 0 12px 15px;
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            border-bottom: none;
+        }
+
+        .accordion-content li:hover {
             color: var(--text-color);
         }
 
@@ -322,7 +353,6 @@
             opacity: 0.85;
         }
 
-        /* Products Grid Section */
         .products-section {
             max-width: 1400px;
             margin: 0 auto;
@@ -375,7 +405,6 @@
             font-size: 0.9rem;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px;
@@ -424,11 +453,11 @@
         </div>
     </header>
 
-    <!-- Multi-Level Slide-Out Mobile Menu Overlay -->
+    <!-- Slide-Out Mobile Menu Overlay -->
     <div class="menu-overlay" id="menuOverlay">
         <div class="menu-content">
             
-            <!-- Main Menu Panel -->
+            <!-- Root Main Menu Panel -->
             <div class="menu-panel active" id="mainPanel">
                 <div class="menu-header">
                     <span>Menu</span>
@@ -438,12 +467,13 @@
                     <input type="text" placeholder="Search for...">
                 </div>
                 <ul class="menu-list">
-                    <li class="has-sub" data-target="shopStaticPanel">Shop STATIC FORM <span>&gt;</span></li>
+                    <li class="has-sub" data-target="shopStaticPanel">Shop STATIC FORM <span class="arrow">&gt;</span></li>
+                    <li class="has-sub" data-target="shopActivewearPanel">Shop FORM87 ACTIVEWEAR <span class="arrow">&gt;</span></li>
                     <li>Prestige Loyalty</li>
                     <li>Outfits</li>
                     <li>Behind the Brand</li>
                     <li>Lookbooks</li>
-                    <li>Client Services <span>&gt;</span></li>
+                    <li>Client Services <span class="arrow">&gt;</span></li>
                 </ul>
             </div>
 
@@ -453,89 +483,80 @@
                     <button class="back-btn" onclick="switchPanel('mainPanel')">&larr; Shop STATIC FORM</button>
                     <button class="close-btn" onclick="toggleMenu()">&times;</button>
                 </div>
-                <ul class="menu-list">
-                    <li>Bestsellers</li>
-                    <li class="has-sub" data-target="clothingPanel">Clothing <span>&gt;</span></li>
-                    <li class="has-sub" data-target="collectionsPanel">Collections <span>&gt;</span></li>
-                    <li>Collaborations</li>
-                    <li class="has-sub" data-target="accessoriesPanel">Accessories <span>&gt;</span></li>
-                    <li class="has-sub" data-target="footwearPanel">Footwear <span>&gt;</span></li>
-                    <li>Gift Cards</li>
-                    <li class="has-sub" data-target="outfitsPanel">Outfits <span>&gt;</span></li>
-                </ul>
-            </div>
-
-            <!-- Clothing Sub-Panel -->
-            <div class="menu-panel" id="clothingPanel">
-                <div class="menu-header">
-                    <button class="back-btn" onclick="switchPanel('shopStaticPanel')">&larr; Clothing</button>
-                    <button class="close-btn" onclick="toggleMenu()">&times;</button>
+                
+                <!-- Clothing Accordion -->
+                <div class="accordion-header" onclick="toggleAccordion('clothingAccordion')">
+                    <span>Clothing</span>
+                    <span class="arrow" id="clothingAccordionArrow">&gt;</span>
                 </div>
-                <ul class="menu-list sub-items">
+                <ul class="accordion-content" id="clothingAccordion">
                     <li>All</li>
+                    <li>T-Shirts & Tanks</li>
+                    <li>Shorts</li>
                     <li>Hoodies</li>
                     <li>Pants</li>
-                    <li>T-Shirts</li>
-                    <li>Shorts</li>
-                    <li>Sweatpants</li>
-                    <li>Denim</li>
-                    <li>Sweatshirts</li>
-                    <li>Shirts</li>
+                    <li>Outerwear</li>
+                </ul>
+
+                <!-- Collections Accordion -->
+                <div class="accordion-header" onclick="toggleAccordion('collectionsAccordion')">
+                    <span>Collections</span>
+                    <span class="arrow" id="collectionsAccordionArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="collectionsAccordion">
+                    <li>Team FORM87</li>
+                    <li>FORM87 Winter ‘25</li>
+                    <li>FORM87 Summer ‘26</li>
+                    <li>FORM87 Spring ‘26</li>
+                    <li>FORM87 Fall ‘25</li>
+                    <li>Women’s</li>
+                </ul>
+
+                <!-- Direct links for Accessories, Footwear, Outfits -->
+                <ul class="menu-list" style="border-top: none;">
+                    <li>Accessories <span class="arrow">&gt;</span></li>
+                    <li>Footwear <span class="arrow">&gt;</span></li>
+                    <li>Outfits <span class="arrow">&gt;</span></li>
                 </ul>
             </div>
 
-            <!-- Collections Sub-Panel -->
-            <div class="menu-panel" id="collectionsPanel">
+            <!-- Shop FORM87 ACTIVEWEAR Panel -->
+            <div class="menu-panel" id="shopActivewearPanel">
                 <div class="menu-header">
-                    <button class="back-btn" onclick="switchPanel('shopStaticPanel')">&larr; Collections</button>
+                    <button class="back-btn" onclick="switchPanel('mainPanel')">&larr; Shop FORM87 ACTIVEWEAR</button>
                     <button class="close-btn" onclick="toggleMenu()">&times;</button>
                 </div>
-                <ul class="menu-list sub-items">
-                    <li>Legacy Club</li>
-                    <li>Core Club</li>
-                    <li>LonDon</li>
-                    <li>Women's</li>
-                </ul>
-            </div>
-
-            <!-- Accessories Sub-Panel -->
-            <div class="menu-panel" id="accessoriesPanel">
-                <div class="menu-header">
-                    <button class="back-btn" onclick="switchPanel('shopStaticPanel')">&larr; Accessories</button>
-                    <button class="close-btn" onclick="toggleMenu()">&times;</button>
+                
+                <div class="accordion-header" onclick="toggleAccordion('activewearClothingAccordion')">
+                    <span>Clothing</span>
+                    <span class="arrow" id="activewearClothingAccordionArrow">&gt;</span>
                 </div>
-                <ul class="menu-list sub-items">
+                <ul class="accordion-content" id="activewearClothingAccordion">
                     <li>All</li>
-                    <li>Caps</li>
-                    <li>Belts</li>
-                    <li>Socks</li>
-                    <li>Sunglasses</li>
+                    <li>T-Shirts & Tanks</li>
+                    <li>Shorts</li>
+                    <li>Hoodies</li>
+                    <li>Pants</li>
+                    <li>Outerwear</li>
                 </ul>
-            </div>
 
-            <!-- Footwear Sub-Panel -->
-            <div class="menu-panel" id="footwearPanel">
-                <div class="menu-header">
-                    <button class="back-btn" onclick="switchPanel('shopStaticPanel')">&larr; Footwear</button>
-                    <button class="close-btn" onclick="toggleMenu()">&times;</button>
+                <div class="accordion-header" onclick="toggleAccordion('activewearCollectionsAccordion')">
+                    <span>Collections</span>
+                    <span class="arrow" id="activewearCollectionsAccordionArrow">&gt;</span>
                 </div>
-                <ul class="menu-list sub-items">
-                    <li>All Footwear</li>
-                    <li>Runners</li>
-                    <li>Slides</li>
-                    <li>Boots</li>
+                <ul class="accordion-content" id="activewearCollectionsAccordion">
+                    <li>Team FORM87</li>
+                    <li>FORM87 Winter ‘25</li>
+                    <li>FORM87 Summer ‘26</li>
+                    <li>FORM87 Spring ‘26</li>
+                    <li>FORM87 Fall ‘25</li>
+                    <li>Women’s</li>
                 </ul>
-            </div>
 
-            <!-- Outfits Sub-Panel -->
-            <div class="menu-panel" id="outfitsPanel">
-                <div class="menu-header">
-                    <button class="back-btn" onclick="switchPanel('shopStaticPanel')">&larr; Outfits</button>
-                    <button class="close-btn" onclick="toggleMenu()">&times;</button>
-                </div>
-                <ul class="menu-list sub-items">
-                    <li>Lookbook Outfits</li>
-                    <li>Curated Sets</li>
+                <ul class="menu-list" style="border-top: none;">
+                    <li>Accessories <span class="arrow">&gt;</span></li>
+                    <li>Footwear <span class="arrow">&gt;</span></li>
+                    <li>Outfits <span class="arrow">&gt;</span></li>
                 </ul>
             </div>
 
@@ -593,10 +614,23 @@
             document.getElementById(panelId).classList.add('active');
         }
 
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const arrow = document.getElementById(id + 'Arrow');
+            content.classList.toggle('active');
+            if (content.classList.contains('active')) {
+                arrow.textContent = 'v';
+            } else {
+                arrow.textContent = '>';
+            }
+        }
+
         document.querySelectorAll('.has-sub').forEach(item => {
             item.addEventListener('click', () => {
                 const targetPanel = item.getAttribute('data-target');
-                switchPanel(targetPanel);
+                if (targetPanel) {
+                    switchPanel(targetPanel);
+                }
             });
         });
     </script>
