@@ -164,13 +164,8 @@
             border-radius: 4px;
             cursor: pointer;
             margin-bottom: 12px;
-            transition: opacity 0.2s;
             text-transform: uppercase;
             letter-spacing: 1px;
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
         }
 
         .btn-secondary {
@@ -185,14 +180,8 @@
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: border-color 0.2s;
         }
 
-        .btn-secondary:hover {
-            border-color: #ffffff;
-        }
-
-        /* Checkbox styling */
         .checkbox-container {
             display: flex;
             align-items: flex-start;
@@ -235,19 +224,14 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
-        .back-home a:hover {
-            color: #ffffff;
-        }
     </style>
 </head>
 <body>
 
     <div class="auth-container">
-        <!-- Close Button redirects home -->
         <button class="close-btn" onclick="window.location.href='index.html'">✕</button>
 
-        <!-- VIEW 1: SIGN IN -->
+        <!-- Login View -->
         <div id="login-view" class="form-view active">
             <div class="brand-title">STATIC FORM</div>
             <div class="brand-subtitle">Member Access</div>
@@ -275,7 +259,7 @@
             </form>
         </div>
 
-        <!-- VIEW 2: RECOVER PASSWORD -->
+        <!-- Recover Password View -->
         <div id="recover-view" class="form-view">
             <div class="brand-title" style="font-size: 1.25rem; margin-bottom: 10px;">Recover your</div>
             <div class="brand-title" style="font-size: 1.5rem; margin-bottom: 35px;">Password</div>
@@ -286,12 +270,12 @@
                     <input type="email" class="input-field" required placeholder="name@example.com">
                 </div>
 
-                <button type="submit" class="btn-primary" style="background-color: #ffffff; color: #0b0f19;">Send reset email</button>
+                <button type="submit" class="btn-primary">Send reset email</button>
                 <button type="button" class="btn-secondary" onclick="switchView('login-view')">Cancel</button>
             </form>
         </div>
 
-        <!-- VIEW 3: CREATE ACCOUNT -->
+        <!-- Register View -->
         <div id="register-view" class="form-view">
             <div class="brand-title" style="font-size: 1.1rem; text-align: left; margin-bottom: 25px;">1 / 2 &nbsp;&nbsp; Details</div>
 
@@ -339,7 +323,6 @@
     </div>
 
     <script>
-        // Switch between views seamlessly
         function switchView(viewId) {
             document.querySelectorAll('.form-view').forEach(view => {
                 view.classList.remove('active');
@@ -347,31 +330,23 @@
             document.getElementById(viewId).classList.add('active');
         }
 
-        // Toggle password show/hide with eye icon
         function togglePassword(fieldId) {
             const input = document.getElementById(fieldId);
-            if (input.type === "password") {
-                input.type = "text";
-            } else {
-                input.type = "password";
-            }
+            input.type = input.type === "password" ? "text" : "password";
         }
 
-        // Handle Login Submission logic placeholder
         function handleLogin(event) {
             event.preventDefault();
             alert("Signed in successfully!");
             window.location.href = "index.html";
         }
 
-        // Handle Recover Password logic placeholder
         function handleRecover(event) {
             event.preventDefault();
             alert("Password reset email sent if account exists.");
             switchView('login-view');
         }
 
-        // Handle Registration with 12-character validation requirement
         function handleRegister(event) {
             event.preventDefault();
             const password = document.getElementById('reg-password').value;
