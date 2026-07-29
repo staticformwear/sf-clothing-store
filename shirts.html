@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title id="pageTitle">Shirts – STATIC FORM</title>
+    <meta name="description" content="Refined British Apparel | Shirts Collection">
+    
+    <meta property="og:title" content="Shirts – STATIC FORM | Official Store">
+    <meta property="og:site_name" content="STATIC FORM">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.css" />
+    <script async src="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const isMobile = window.innerWidth <= 768;
+            const titleElement = document.getElementById('pageTitle');
+            if (isMobile) {
+                titleElement.textContent = "Shirts – STATIC FORM Clothing";
+            } else {
+                titleElement.textContent = "Shirts – Refined British Apparel | Official Store | STATIC FORM";
+            }
+        });
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --card-bg: #ffffff;
+            --text-color: #000000;
+            --text-muted: #737373;
+            --border-color: #e5e5e5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation Layout */
+        header {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            padding: 20px 30px;
+            border-bottom: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background-color: var(--text-color);
+            transition: 0.3s;
+        }
+        .hamburger span:nth-child(3) {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .hamburger span:nth-child(3) {
+                display: block;
+            }
+        }
+
+        .logo-container {
+            text-align: center;
+            justify-self: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: #000000;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: transparent;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            justify-self: end;
+            gap: 18px;
+        }
+
+        .nav-icon {
+            color: var(--text-color);
+            text-decoration: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -6px;
+            right: -8px;
+            background-color: #000000;
+            color: #ffffff;
+            font-size: 0.65rem;
+            font-weight: bold;
+            padding: 1px 4px;
+            border-radius: 50%;
+        }
+
+        /* Slide-Out Mobile Menu Overlay */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            z-index: 9999;
+            display: none;
+            overflow-y: auto;
+            padding: 30px;
+        }
+
+        .menu-overlay.active {
+            display: block;
+        }
+
+        .menu-content {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .menu-panel {
+            display: none;
+        }
+
+        .menu-panel.active {
+            display: block;
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #000000;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .search-box {
+            margin-bottom: 25px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 0;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-color);
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .menu-list li span.arrow {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            color: var(--text-color);
+        }
+
+        .accordion-header span.arrow {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .accordion-content {
+            display: none;
+            padding-left: 0;
+            list-style: none;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        .accordion-content li {
+            padding: 12px 0 12px 15px;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            border-bottom: none;
+            cursor: pointer;
+        }
+
+        .accordion-content li a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+        }
+
+        .accordion-content li:hover {
+            color: var(--text-color);
+        }
+
+        /* Category Grid Container Layout */
+        .category-container {
+            padding: 60px 30px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 12px 20px;
+        }
+
+        @media (min-width: 576px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .category-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .product-card {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-image-container {
+            width: 100%;
+            height: 450px;
+            background-color: #f4f4f4;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .product-placeholder {
+            color: #888888;
+            font-size: 0.85rem;
+        }
+
+        .product-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0 2px;
+        }
+
+        .product-info h3 {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #000000;
+            margin-bottom: 3px;
+        }
+
+        .product-info .price {
+            font-size: 0.85rem;
+            color: #000000;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .product-info .colors {
+            font-size: 0.75rem;
+            color: #737373;
+        }
+
+        .btn-quick-add {
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            font-weight: 300;
+            cursor: pointer;
+            color: #000000;
+            padding: 0 5px;
+            line-height: 1;
+        }
+        .btn-quick-add:hover {
+            opacity: 0.6;
+        }
+
+        /* Footer Styles */
+        .site-footer {
+            border-top: 1px solid var(--border-color);
+            padding: 40px 30px;
+            background-color: #ffffff;
+            color: var(--text-muted);
+        }
+
+        .footer-accordions {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+
+        .footer-section {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .footer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #000000;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-toggle {
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .footer-content {
+            display: none;
+            list-style: none;
+            padding-bottom: 16px;
+        }
+
+        .footer-content.active {
+            display: block;
+        }
+
+        .footer-content li {
+            padding: 8px 0;
+        }
+
+        .footer-content li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .footer-content li a:hover {
+            color: #000000;
+        }
+
+        .footer-legal {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px 25px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+        }
+
+        .footer-legal a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover {
+            color: #000000;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #737373;
+        }
+    </style>
+</head>
+<body>
+
+    <div hidden id="snipcart" data-api-key="OTE1Y2I5Y2YtMTcyOS00NTIyLThlNTQtNjAzY2NmNDUwZmQwNjM5MjA4Mjk4ODIwNTMwMzIy"></div>
+
+    <header>
+        <div class="nav-left">
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <button class="nav-icon" onclick="toggleMenu()" title="Search">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+            <a href="#notifications" class="nav-icon" title="Notifications">
+                <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            </a>
+        </div>
+
+        <div class="logo-container">
+            <a href="index.html" class="logo">STATIC FORM</a>
+        </div>
+
+        <div class="nav-right">
+            <a href="#saved" class="nav-icon" title="Saved Items">
+                <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+            </a>
+            <a href="login.html" class="nav-icon" title="Account Login">
+                <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </a>
+            <a href="#cart" class="nav-icon snipcart-checkout" title="Cart">
+                <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span class="cart-badge snipcart-items-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            
+            <div class="menu-panel active" id="mainPanel">
+                <div class="menu-header">
+                    <span>Menu</span>
+                    <button class="close-btn" onclick="toggleMenu()">&times;</button>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Search for...">
+                </div>
+                <ul class="menu-list">
+                    <li class="has-sub" data-target="shopStaticPanel">Shop STATIC FORM <span class="arrow">&gt;</span></li>
+                    <li class="has-sub" data-target="shopActivewearPanel">Shop FORM87 ACTIVEWEAR <span class="arrow">&gt;</span></li>
+                </ul>
+            </div>
+
+            <div class="menu-panel" id="shopStaticPanel">
+                <div class="menu-header">
+                    <button class="back-btn" onclick="switchPanel('mainPanel')">&larr; Shop STATIC FORM</button>
+                    <button class="close-btn" onclick="toggleMenu()">&times;</button>
+                </div>
+                
+                <div class="accordion-header" onclick="toggleAccordion('staticClothing')">
+                    <span>Clothing</span>
+                    <span class="arrow" id="staticClothingArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="staticClothing">
+                    <li><a href="index.html#shop">All</a></li>
+                    <li><a href="hoodies.html">Hoodies</a></li>
+                    <li><a href="pants.html">Pants</a></li>
+                    <li><a href="t-shirts.html">T-Shirts</a></li>
+                    <li><a href="shorts.html">Shorts</a></li>
+                    <li><a href="sweatpants.html">Sweatpants</a></li>
+                    <li><a href="denim.html">Denim</a></li>
+                    <li><a href="sweatshirts.html">Sweatshirts</a></li>
+                    <li><a href="shirts.html">Shirts</a></li>
+                </ul>
+
+                <div class="accordion-header" onclick="toggleAccordion('staticCollections')">
+                    <span>Collections</span>
+                    <span class="arrow" id="staticCollectionsArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="staticCollections">
+                    <li>Legacy Club</li>
+                    <li>Core Club</li>
+                    <li>LonDon</li>
+                    <li>Women’s</li>
+                </ul>
+
+                <div class="accordion-header" onclick="toggleAccordion('staticAccessories')">
+                    <span>Accessories</span>
+                    <span class="arrow" id="staticAccessoriesArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="staticAccessories">
+                    <li>All</li>
+                    <li>Caps</li>
+                    <li>Belts</li>
+                    <li>Socks</li>
+                    <li>Sunglasses</li>
+                </ul>
+
+                <div class="accordion-header" onclick="toggleAccordion('staticFootwear')">
+                    <span>Footwear</span>
+                    <span class="arrow" id="staticFootwearArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="staticFootwear">
+                    <li>All Footwear</li>
+                    <li>Sneakers</li>
+                    <li>Slides</li>
+                </ul>
+
+                <div class="accordion-header" onclick="toggleAccordion('staticOutfits')">
+                    <span>Outfits</span>
+                    <span class="arrow" id="staticOutfitsArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="staticOutfits">
+                    <li>All Outfits</li>
+                    <li>Curated Looks</li>
+                </ul>
+            </div>
+
+            <div class="menu-panel" id="shopActivewearPanel">
+                <div class="menu-header">
+                    <button class="back-btn" onclick="switchPanel('mainPanel')">&larr; Shop FORM87 ACTIVEWEAR</button>
+                    <button class="close-btn" onclick="toggleMenu()">&times;</button>
+                </div>
+                
+                <div class="accordion-header" onclick="toggleAccordion('activewearClothing')">
+                    <span>Clothing</span>
+                    <span class="arrow" id="activewearClothingArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="activewearClothing">
+                    <li>All</li>
+                    <li>T-Shirts</li>
+                    <li>Hoodies</li>
+                    <li>Shorts</li>
+                    <li>Pants</li>
+                    <li>Outerwear</li>
+                </ul>
+
+                <div class="accordion-header" onclick="toggleAccordion('activewearCollections')">
+                    <span>Collections</span>
+                    <span class="arrow" id="activewearCollectionsArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="activewearCollections">
+                    <li>Team FORM87</li>
+                    <li>FORM87 Winter ‘25</li>
+                    <li>FORM87 Summer ‘26</li>
+                    <li>FORM87 Spring ‘26</li>
+                    <li>FORM87 Fall ‘25</li>
+                    <li>Women’s</li>
+                </ul>
+
+                <div class="accordion-header" onclick="toggleAccordion('activewearAccessories')">
+                    <span>Accessories</span>
+                    <span class="arrow" id="activewearAccessoriesArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="activewearAccessories">
+                    <li>All Accessories</li>
+                </ul>
+
+                <div class="accordion-header" onclick="toggleAccordion('activewearFootwear')">
+                    <span>Footwear</span>
+                    <span class="arrow" id="activewearFootwearArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="activewearFootwear">
+                    <li>All Footwear</li>
+                </ul>
+
+                <div class="accordion-header" onclick="toggleAccordion('activewearOutfits')">
+                    <span>Outfits</span>
+                    <span class="arrow" id="activewearOutfitsArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="activewearOutfits">
+                    <li>All Outfits</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <main class="category-container">
+        <h1 class="category-title">Shirts</h1>
+        
+        <div class="category-grid">
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Classic Oxford Button-Down Shirt</h3>
+                        <p class="price">$120.00</p>
+                        <p class="colors">3 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="classic-oxford-button-down-shirt" 
+                        data-item-price="120.00" 
+                        data-item-name="Classic Oxford Button-Down Shirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Relaxed Poplin Shirt</h3>
+                        <p class="price">$125.00</p>
+                        <p class="colors">4 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="relaxed-poplin-shirt" 
+                        data-item-price="125.00" 
+                        data-item-name="Relaxed Poplin Shirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Heavyweight Flannel Overshirt</h3>
+                        <p class="price">$150.00</p>
+                        <p class="colors">2 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="heavyweight-flannel-overshirt" 
+                        data-item-price="150.00" 
+                        data-item-name="Heavyweight Flannel Overshirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Cuban Collar Resort Shirt</h3>
+                        <p class="price">$115.00</p>
+                        <p class="colors">3 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="cuban-collar-resort-shirt" 
+                        data-item-price="115.00" 
+                        data-item-name="Cuban Collar Resort Shirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Signature Boxy Fit Shirt</h3>
+                        <p class="price">$130.00</p>
+                        <p class="colors">2 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="signature-boxy-fit-shirt" 
+                        data-item-price="130.00" 
+                        data-item-name="Signature Boxy Fit Shirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Utility Pocket Overshirt</h3>
+                        <p class="price">$160.00</p>
+                        <p class="colors">3 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="utility-pocket-overshirt" 
+                        data-item-price="160.00" 
+                        data-item-name="Utility Pocket Overshirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Linen Blend Summer Shirt</h3>
+                        <p class="price">$120.00</p>
+                        <p class="colors">4 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="linen-blend-summer-shirt" 
+                        data-item-price="120.00" 
+                        data-item-name="Linen Blend Summer Shirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Satin Collar Dress Shirt</h3>
+                        <p class="price">$140.00</p>
+                        <p class="colors">1 Colour</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="satin-collar-dress-shirt" 
+                        data-item-price="140.00" 
+                        data-item-name="Satin Collar Dress Shirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Striped Business Casual Shirt</h3>
+                        <p class="price">$125.00</p>
+                        <p class="colors">2 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="striped-business-casual-shirt" 
+                        data-item-price="125.00" 
+                        data-item-name="Striped Business Casual Shirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Raw Edge Button-Up</h3>
+                        <p class="price">$135.00</p>
+                        <p class="colors">2 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="raw-edge-button-up" 
+                        data-item-price="135.00" 
+                        data-item-name="Raw Edge Button-Up">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Corduroy Button-Down Shirt</h3>
+                        <p class="price">$145.00</p>
+                        <p class="colors">3 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="corduroy-button-down-shirt" 
+                        data-item-price="145.00" 
+                        data-item-name="Corduroy Button-Down Shirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Minimalist Camp Collar Shirt</h3>
+                        <p class="price">$120.00</p>
+                        <p class="colors">3 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="minimalist-camp-collar-shirt" 
+                        data-item-price="120.00" 
+                        data-item-name="Minimalist Camp Collar Shirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Short Sleeve Knit Shirt</h3>
+                        <p class="price">$110.00</p>
+                        <p class="colors">4 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="short-sleeve-knit-shirt" 
+                        data-item-price="110.00" 
+                        data-item-name="Short Sleeve Knit Shirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Paneled Workwear Shirt</h3>
+                        <p class="price">$155.00</p>
+                        <p class="colors">2 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="paneled-workwear-shirt" 
+                        data-item-price="155.00" 
+                        data-item-name="Paneled Workwear Shirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Structured Poplin Shirt</h3>
+                        <p class="price">$130.00</p>
+                        <p class="colors">3 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="structured-poplin-shirt" 
+                        data-item-price="130.00" 
+                        data-item-name="Structured Poplin Shirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Oversized Denim Overshirt</h3>
+                        <p class="price">$165.00</p>
+                        <p class="colors">2 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="oversized-denim-overshirt" 
+                        data-item-price="165.00" 
+                        data-item-name="Oversized Denim Overshirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Check Pattern Overshirt</h3>
+                        <p class="price">$145.00</p>
+                        <p class="colors">2 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="check-pattern-overshirt" 
+                        data-item-price="145.00" 
+                        data-item-name="Check Pattern Overshirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Guayabera Pocket Shirt</h3>
+                        <p class="price">$135.00</p>
+                        <p class="colors">3 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="guayabera-pocket-shirt" 
+                        data-item-price="135.00" 
+                        data-item-name="Guayabera Pocket Shirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Signature Crest Shirt</h3>
+                        <p class="price">$130.00</p>
+                        <p class="colors">4 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="signature-crest-shirt" 
+                        data-item-price="130.00" 
+                        data-item-name="Signature Crest Shirt">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Ecru Minimalist Shirt</h3>
+                        <p class="price">$125.00</p>
+                        <p class="colors">1 Colour</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="ecru-minimalist-shirt" 
+                        data-item-price="125.00" 
+                        data-item-name="Ecru Minimalist Shirt">+</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-accordions">
+            <div class="footer-section">
+                <div class="footer-header" onclick="toggleFooterAccordion('customerCare', 'customerCareArrow')">
+                    <span>Customer Care</span>
+                    <span class="footer-toggle" id="customerCareArrow">+</span>
+                </div>
+                <ul class="footer-content" id="customerCare">
+                    <li><a href="#track-order">Track Order</a></li>
+                    <li><a href="#return">Make A Return</a></li>
+                    <li><a href="#student-discount">Student Discount</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <div class="footer-header" onclick="toggleFooterAccordion('brandSection', 'brandArrow')">
+                    <span>Brand</span>
+                    <span class="footer-toggle" id="brandArrow">+</span>
+                </div>
+                <ul class="footer-content" id="brandSection">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#shipping">Shipping & Returns</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <div class="footer-header" onclick="toggleFooterAccordion('socialSection', 'socialArrow')">
+                    <span>Social</span>
+                    <span class="footer-toggle" id="socialArrow">+</span>
+                </div>
+                <ul class="footer-content" id="socialSection">
+                    <li><a href="#instagram">Instagram</a></li>
+                    <li><a href="#tiktok">TikTok</a></li>
+                    <li><a href="#youtube">YouTube</a></li>
+                    <li><a href="#x">X</a></li>
+                    <li><a href="#facebook">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-legal">
+            <a href="#terms">Terms & Conditions</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#shipping-policy">Shipping & Returns Policy</a>
+            <a href="#cookie-policy">Cookie Policy</a>
+            <a href="#cookie-preferences">Cookie Preferences</a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 STATIC FORM. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menuOverlay');
+            menu.classList.toggle('active');
+            if (menu.classList.contains('active')) {
+                switchPanel('mainPanel');
+            }
+        }
+
+        function switchPanel(panelId) {
+            const panels = document.querySelectorAll('.menu-panel');
+            panels.forEach(panel => panel.classList.remove('active'));
+            document.getElementById(panelId).classList.add('active');
+        }
+
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const arrow = document.getElementById(id + 'Arrow');
+            content.classList.toggle('active');
+            if (content.classList.contains('active')) {
+                arrow.textContent = 'v';
+            } else {
+                arrow.textContent = '>';
+            }
+        }
+
+        function toggleFooterAccordion(contentId, arrowId) {
+            const content = document.getElementById(contentId);
+            const arrow = document.getElementById(arrowId);
+            content.classList.toggle('active');
+            if (content.classList.contains('active')) {
+                arrow.textContent = '-';
+            } else {
+                arrow.textContent = '+';
+            }
+        }
+
+        document.querySelectorAll('.has-sub').forEach(item => {
+            item.addEventListener('click', () => {
+                const targetPanel = item.getAttribute('data-target');
+                if (targetPanel) {
+                    switchPanel(targetPanel);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
