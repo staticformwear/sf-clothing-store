@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Dynamic SEO & Google Search Title -->
-    <title id="pageTitle">T-Shirts | STATIC FORM</title>
-    <meta name="description" content="Refined British Apparel | Official T-Shirts Collection">
+    <title id="pageTitle">T-Shirts – STATIC FORM</title>
+    <meta name="description" content="Refined British Apparel | T-Shirts Collection">
     
     <!-- Open Graph / Google Snippet Customization -->
-    <meta property="og:title" content="T-Shirts | STATIC FORM Official Store">
+    <meta property="og:title" content="T-Shirts – STATIC FORM | Official Store">
     <meta property="og:site_name" content="STATIC FORM">
 
     <!-- Favicon -->
@@ -24,9 +24,9 @@
             const isMobile = window.innerWidth <= 768;
             const titleElement = document.getElementById('pageTitle');
             if (isMobile) {
-                titleElement.textContent = "T-Shirts | STATIC FORM";
+                titleElement.textContent = "T-Shirts – STATIC FORM Clothing";
             } else {
-                titleElement.textContent = "T-Shirts Collection | Refined British Apparel | STATIC FORM";
+                titleElement.textContent = "T-Shirts – Refined British Apparel | Official Store | STATIC FORM";
             }
         });
     </script>
@@ -303,47 +303,35 @@
             color: var(--text-color);
         }
 
-        /* Page Banner Title */
-        .collection-header {
-            padding: 40px 30px 20px 30px;
-            max-width: 1400px;
+        /* Category Grid Container Layout */
+        .category-container {
+            padding: 60px 30px;
+            max-width: 1600px;
             margin: 0 auto;
         }
 
-        .collection-header h1 {
+        .category-title {
             font-size: 2rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
         }
 
-        .collection-header p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-top: 5px;
-        }
-
-        /* Responsive 4-Column Grid Layout matching Hoodies style */
-        .catalog-section {
-            padding: 20px 30px 80px 30px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .product-grid {
+        .category-grid {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
-            gap: 24px;
+            gap: 12px 20px;
         }
 
         @media (min-width: 576px) {
-            .product-grid {
+            .category-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (min-width: 992px) {
-            .product-grid {
+            .category-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
@@ -358,7 +346,7 @@
 
         .product-image-container {
             width: 100%;
-            height: 400px;
+            height: 450px;
             background-color: #f4f4f4;
             margin-bottom: 12px;
             display: flex;
@@ -566,13 +554,12 @@
                     <button class="close-btn" onclick="toggleMenu()">&times;</button>
                 </div>
                 
-                <!-- Clothing Accordion (Expanded by default for user convenience here) -->
                 <div class="accordion-header" onclick="toggleAccordion('staticClothing')">
                     <span>Clothing</span>
-                    <span class="arrow" id="staticClothingArrow">v</span>
+                    <span class="arrow" id="staticClothingArrow">&gt;</span>
                 </div>
-                <ul class="accordion-content active" id="staticClothing">
-                    <li><a href="all-clothing.html">All</a></li>
+                <ul class="accordion-content" id="staticClothing">
+                    <li><a href="index.html#shop">All</a></li>
                     <li><a href="hoodies.html">Hoodies</a></li>
                     <li><a href="pants.html">Pants</a></li>
                     <li><a href="t-shirts.html">T-Shirts</a></li>
@@ -583,50 +570,46 @@
                     <li><a href="shirts.html">Shirts</a></li>
                 </ul>
 
-                <!-- Collections Accordion -->
                 <div class="accordion-header" onclick="toggleAccordion('staticCollections')">
                     <span>Collections</span>
                     <span class="arrow" id="staticCollectionsArrow">&gt;</span>
                 </div>
                 <ul class="accordion-content" id="staticCollections">
-                    <li><a href="legacy-club.html">Legacy Club</a></li>
-                    <li><a href="core-club.html">Core Club</a></li>
-                    <li><a href="london.html">LonDon</a></li>
-                    <li><a href="womens.html">Women’s</a></li>
+                    <li>Legacy Club</li>
+                    <li>Core Club</li>
+                    <li>LonDon</li>
+                    <li>Women’s</li>
                 </ul>
 
-                <!-- Accessories Accordion -->
                 <div class="accordion-header" onclick="toggleAccordion('staticAccessories')">
                     <span>Accessories</span>
                     <span class="arrow" id="staticAccessoriesArrow">&gt;</span>
                 </div>
                 <ul class="accordion-content" id="staticAccessories">
-                    <li><a href="accessories.html">All</a></li>
-                    <li><a href="caps.html">Caps</a></li>
-                    <li><a href="belts.html">Belts</a></li>
-                    <li><a href="socks.html">Socks</a></li>
-                    <li><a href="sunglasses.html">Sunglasses</a></li>
+                    <li>All</li>
+                    <li>Caps</li>
+                    <li>Belts</li>
+                    <li>Socks</li>
+                    <li>Sunglasses</li>
                 </ul>
 
-                <!-- Footwear Accordion -->
                 <div class="accordion-header" onclick="toggleAccordion('staticFootwear')">
                     <span>Footwear</span>
                     <span class="arrow" id="staticFootwearArrow">&gt;</span>
                 </div>
                 <ul class="accordion-content" id="staticFootwear">
-                    <li><a href="footwear.html">All Footwear</a></li>
-                    <li><a href="sneakers.html">Sneakers</a></li>
-                    <li><a href="slides.html">Slides</a></li>
+                    <li>All Footwear</li>
+                    <li>Sneakers</li>
+                    <li>Slides</li>
                 </ul>
 
-                <!-- Outfits Accordion -->
                 <div class="accordion-header" onclick="toggleAccordion('staticOutfits')">
                     <span>Outfits</span>
                     <span class="arrow" id="staticOutfitsArrow">&gt;</span>
                 </div>
                 <ul class="accordion-content" id="staticOutfits">
-                    <li><a href="outfits.html">All Outfits</a></li>
-                    <li><a href="curated-looks.html">Curated Looks</a></li>
+                    <li>All Outfits</li>
+                    <li>Curated Looks</li>
                 </ul>
             </div>
 
@@ -636,175 +619,431 @@
                     <button class="back-btn" onclick="switchPanel('mainPanel')">&larr; Shop FORM87 ACTIVEWEAR</button>
                     <button class="close-btn" onclick="toggleMenu()">&times;</button>
                 </div>
+                
                 <div class="accordion-header" onclick="toggleAccordion('activewearClothing')">
                     <span>Clothing</span>
                     <span class="arrow" id="activewearClothingArrow">&gt;</span>
                 </div>
                 <ul class="accordion-content" id="activewearClothing">
-                    <li><a href="activewear-all.html">All</a></li>
-                    <li><a href="activewear-t-shirts.html">T-Shirts</a></li>
-                    <li><a href="activewear-hoodies.html">Hoodies</a></li>
-                    <li><a href="activewear-shorts.html">Shorts</a></li>
-                    <li><a href="activewear-pants.html">Pants</a></li>
-                    <li><a href="activewear-outerwear.html">Outerwear</a></li>
+                    <li>All</li>
+                    <li>T-Shirts</li>
+                    <li>Hoodies</li>
+                    <li>Shorts</li>
+                    <li>Pants</li>
+                    <li>Outerwear</li>
+                </ul>
+
+                <div class="accordion-header" onclick="toggleAccordion('activewearCollections')">
+                    <span>Collections</span>
+                    <span class="arrow" id="activewearCollectionsArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="activewearCollections">
+                    <li>Team FORM87</li>
+                    <li>FORM87 Winter ‘25</li>
+                    <li>FORM87 Summer ‘26</li>
+                    <li>FORM87 Spring ‘26</li>
+                    <li>FORM87 Fall ‘25</li>
+                    <li>Women’s</li>
+                </ul>
+
+                <div class="accordion-header" onclick="toggleAccordion('activewearAccessories')">
+                    <span>Accessories</span>
+                    <span class="arrow" id="activewearAccessoriesArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="activewearAccessories">
+                    <li>All Accessories</li>
+                </ul>
+
+                <div class="accordion-header" onclick="toggleAccordion('activewearFootwear')">
+                    <span>Footwear</span>
+                    <span class="arrow" id="activewearFootwearArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="activewearFootwear">
+                    <li>All Footwear</li>
+                </ul>
+
+                <div class="accordion-header" onclick="toggleAccordion('activewearOutfits')">
+                    <span>Outfits</span>
+                    <span class="arrow" id="activewearOutfitsArrow">&gt;</span>
+                </div>
+                <ul class="accordion-content" id="activewearOutfits">
+                    <li>All Outfits</li>
                 </ul>
             </div>
 
         </div>
     </div>
 
-    <!-- Page Title Header -->
-    <div class="collection-header">
-        <h1>T-Shirts</h1>
-        <p>Refined British T-Shirts & Graphics</p>
-    </div>
-
-    <!-- T-Shirts Grid Section (4 items per row matching Hoodies style count & layout) -->
-    <section class="catalog-section">
-        <div class="product-grid">
+    <!-- Category Products Section (20 T-Shirts Grid matching Hoodies layout) -->
+    <main class="category-container">
+        <h1 class="category-title">T-Shirts</h1>
+        
+        <div class="category-grid">
             <!-- Item 1 -->
             <div class="product-card">
                 <div class="product-image-container">
-                    <div class="product-placeholder">Tapstitch Product</div>
+                    <span class="product-placeholder">Tapstitch Product</span>
                 </div>
                 <div class="product-details">
                     <div class="product-info">
-                        <h3>Heavyweight Graphic Tee</h3>
+                        <h3>Vintage Washed T-Shirt</h3>
                         <p class="price">$75.00</p>
-                        <p class="colors">1 Colour</p>
+                        <p class="colors">2 Colours</p>
                     </div>
                     <button class="btn-quick-add snipcart-add-item" 
-                        data-item-id="heavyweight-graphic-tee" 
+                        data-item-id="vintage-washed-t-shirt" 
                         data-item-price="75.00" 
-                        data-item-name="Heavyweight Graphic Tee">+</button>
+                        data-item-name="Vintage Washed T-Shirt">+</button>
                 </div>
             </div>
+
             <!-- Item 2 -->
             <div class="product-card">
                 <div class="product-image-container">
-                    <div class="product-placeholder">Tapstitch Product</div>
+                    <span class="product-placeholder">Tapstitch Product</span>
                 </div>
                 <div class="product-details">
                     <div class="product-info">
-                        <h3>Vintage Acid Wash Tee</h3>
+                        <h3>Heavyweight Box Tee</h3>
                         <p class="price">$80.00</p>
-                        <p class="colors">2 Colours</p>
-                    </div>
-                    <button class="btn-quick-add snipcart-add-item" 
-                        data-item-id="vintage-acid-wash-tee" 
-                        data-item-price="80.00" 
-                        data-item-name="Vintage Acid Wash Tee">+</button>
-                </div>
-            </div>
-            <!-- Item 3 -->
-            <div class="product-card">
-                <div class="product-image-container">
-                    <div class="product-placeholder">Tapstitch Product</div>
-                </div>
-                <div class="product-details">
-                    <div class="product-info">
-                        <h3>Core Minimalist Box Tee</h3>
-                        <p class="price">$65.00</p>
                         <p class="colors">3 Colours</p>
                     </div>
                     <button class="btn-quick-add snipcart-add-item" 
-                        data-item-id="core-minimalist-box-tee" 
-                        data-item-price="65.00" 
-                        data-item-name="Core Minimalist Box Tee">+</button>
+                        data-item-id="heavyweight-box-tee" 
+                        data-item-price="80.00" 
+                        data-item-name="Heavyweight Box Tee">+</button>
                 </div>
             </div>
-            <!-- Item 4 -->
+
+            <!-- Item 3 -->
             <div class="product-card">
                 <div class="product-image-container">
-                    <div class="product-placeholder">Tapstitch Product</div>
+                    <span class="product-placeholder">Tapstitch Product</span>
                 </div>
                 <div class="product-details">
                     <div class="product-info">
-                        <h3>Signature Club Crest Tee</h3>
+                        <h3>Minimalist Logo Tee</h3>
                         <p class="price">$70.00</p>
-                        <p class="colors">2 Colours</p>
-                    </div>
-                    <button class="btn-quick-add snipcart-add-item" 
-                        data-item-id="signature-club-crest-tee" 
-                        data-item-price="70.00" 
-                        data-item-name="Signature Club Crest Tee">+</button>
-                </div>
-            </div>
-            <!-- Item 5 -->
-            <div class="product-card">
-                <div class="product-image-container">
-                    <div class="product-placeholder">Tapstitch Product</div>
-                </div>
-                <div class="product-details">
-                    <div class="product-info">
-                        <h3>LonDon Archive Tee</h3>
-                        <p class="price">$75.00</p>
                         <p class="colors">1 Colour</p>
                     </div>
                     <button class="btn-quick-add snipcart-add-item" 
-                        data-item-id="london-archive-tee" 
-                        data-item-price="75.00" 
-                        data-item-name="LonDon Archive Tee">+</button>
+                        data-item-id="minimalist-logo-tee" 
+                        data-item-price="70.00" 
+                        data-item-name="Minimalist Logo Tee">+</button>
                 </div>
             </div>
-            <!-- Item 6 -->
+
+            <!-- Item 4 -->
             <div class="product-card">
                 <div class="product-image-container">
-                    <div class="product-placeholder">Tapstitch Product</div>
+                    <span class="product-placeholder">Tapstitch Product</span>
                 </div>
                 <div class="product-details">
                     <div class="product-info">
-                        <h3>Oversized Ribbed Neck Tee</h3>
+                        <h3>Relaxed Fit T-Shirt</h3>
+                        <p class="price">$72.00</p>
+                        <p class="colors">4 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="relaxed-fit-t-shirt" 
+                        data-item-price="72.00" 
+                        data-item-name="Relaxed Fit T-Shirt">+</button>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Signature Oversized Tee</h3>
                         <p class="price">$85.00</p>
                         <p class="colors">2 Colours</p>
                     </div>
                     <button class="btn-quick-add snipcart-add-item" 
-                        data-item-id="oversized-ribbed-neck-tee" 
+                        data-item-id="signature-oversized-tee" 
                         data-item-price="85.00" 
-                        data-item-name="Oversized Ribbed Neck Tee">+</button>
+                        data-item-name="Signature Oversized Tee">+</button>
                 </div>
             </div>
-            <!-- Item 7 -->
+
+            <!-- Item 6 -->
             <div class="product-card">
                 <div class="product-image-container">
-                    <div class="product-placeholder">Tapstitch Product</div>
+                    <span class="product-placeholder">Tapstitch Product</span>
                 </div>
                 <div class="product-details">
                     <div class="product-info">
-                        <h3>Distressed Edge Tee</h3>
-                        <p class="price">$78.00</p>
+                        <h3>Distressed Edge T-Shirt</h3>
+                        <p class="price">$88.00</p>
                         <p class="colors">1 Colour</p>
                     </div>
                     <button class="btn-quick-add snipcart-add-item" 
-                        data-item-id="distressed-edge-tee" 
-                        data-item-price="78.00" 
-                        data-item-name="Distressed Edge Tee">+</button>
+                        data-item-id="distressed-edge-t-shirt" 
+                        data-item-price="88.00" 
+                        data-item-name="Distressed Edge T-Shirt">+</button>
                 </div>
             </div>
-            <!-- Item 8 -->
+
+            <!-- Item 7 -->
             <div class="product-card">
                 <div class="product-image-container">
-                    <div class="product-placeholder">Tapstitch Product</div>
+                    <span class="product-placeholder">Tapstitch Product</span>
                 </div>
                 <div class="product-details">
                     <div class="product-info">
-                        <h3>Legacy Club Tee</h3>
+                        <h3>Essentials Cotton Tee</h3>
+                        <p class="price">$65.00</p>
+                        <p class="colors">5 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="essentials-cotton-tee" 
+                        data-item-price="65.00" 
+                        data-item-name="Essentials Cotton Tee">+</button>
+                </div>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Ribbed Collar T-Shirt</h3>
+                        <p class="price">$90.00</p>
+                        <p class="colors">2 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="ribbed-collar-t-shirt" 
+                        data-item-price="90.00" 
+                        data-item-name="Ribbed Collar T-Shirt">+</button>
+                </div>
+            </div>
+
+            <!-- Item 9 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Club Jersey Tee</h3>
+                        <p class="price">$75.00</p>
+                        <p class="colors">3 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="club-jersey-tee" 
+                        data-item-price="75.00" 
+                        data-item-name="Club Jersey Tee">+</button>
+                </div>
+            </div>
+
+            <!-- Item 10 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Acid Wash Graphic Tee</h3>
+                        <p class="price">$82.00</p>
+                        <p class="colors">1 Colour</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="acid-wash-graphic-tee" 
+                        data-item-price="82.00" 
+                        data-item-name="Acid Wash Graphic Tee">+</button>
+                </div>
+            </div>
+
+            <!-- Item 11 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Classic Pocket Tee</h3>
                         <p class="price">$70.00</p>
                         <p class="colors">3 Colours</p>
                     </div>
                     <button class="btn-quick-add snipcart-add-item" 
-                        data-item-id="legacy-club-tee" 
+                        data-item-id="classic-pocket-tee" 
                         data-item-price="70.00" 
-                        data-item-name="Legacy Club Tee">+</button>
+                        data-item-name="Classic Pocket Tee">+</button>
+                </div>
+            </div>
+
+            <!-- Item 12 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Structured Heavy Tee</h3>
+                        <p class="price">$85.00</p>
+                        <p class="colors">2 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="structured-heavy-tee" 
+                        data-item-price="85.00" 
+                        data-item-name="Structured Heavy Tee">+</button>
+                </div>
+            </div>
+
+            <!-- Item 13 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Raw Hem T-Shirt</h3>
+                        <p class="price">$72.00</p>
+                        <p class="colors">2 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="raw-hem-t-shirt" 
+                        data-item-price="72.00" 
+                        data-item-name="Raw Hem T-Shirt">+</button>
+                </div>
+            </div>
+
+            <!-- Item 14 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Monogram Embroidered Tee</h3>
+                        <p class="price">$88.00</p>
+                        <p class="colors">1 Colour</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="monogram-embroidered-tee" 
+                        data-item-price="88.00" 
+                        data-item-name="Monogram Embroidered Tee">+</button>
+                </div>
+            </div>
+
+            <!-- Item 15 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Boxy Fit T-Shirt</h3>
+                        <p class="price">$75.00</p>
+                        <p class="colors">4 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="boxy-fit-t-shirt" 
+                        data-item-price="75.00" 
+                        data-item-name="Boxy Fit T-Shirt">+</button>
+                </div>
+            </div>
+
+            <!-- Item 16 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Statement Back Print Tee</h3>
+                        <p class="price">$85.00</p>
+                        <p class="colors">2 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="statement-back-print-tee" 
+                        data-item-price="85.00" 
+                        data-item-name="Statement Back Print Tee">+</button>
+                </div>
+            </div>
+
+            <!-- Item 17 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Double Layer T-Shirt</h3>
+                        <p class="price">$95.00</p>
+                        <p class="colors">1 Colour</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="double-layer-t-shirt" 
+                        data-item-price="95.00" 
+                        data-item-name="Double Layer T-Shirt">+</button>
+                </div>
+            </div>
+
+            <!-- Item 18 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Soft Cotton Jersey Tee</h3>
+                        <p class="price">$78.00</p>
+                        <p class="colors">3 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="soft-cotton-jersey-tee" 
+                        data-item-price="78.00" 
+                        data-item-name="Soft Cotton Jersey Tee">+</button>
+                </div>
+            </div>
+
+            <!-- Item 19 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Utility Pocket T-Shirt</h3>
+                        <p class="price">$88.00</p>
+                        <p class="colors">2 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="utility-pocket-t-shirt" 
+                        data-item-price="88.00" 
+                        data-item-name="Utility Pocket T-Shirt">+</button>
+                </div>
+            </div>
+
+            <!-- Item 20 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <span class="product-placeholder">Tapstitch Product</span>
+                </div>
+                <div class="product-details">
+                    <div class="product-info">
+                        <h3>Signature Crest T-Shirt</h3>
+                        <p class="price">$80.00</p>
+                        <p class="colors">4 Colours</p>
+                    </div>
+                    <button class="btn-quick-add snipcart-add-item" 
+                        data-item-id="signature-crest-t-shirt" 
+                        data-item-price="80.00" 
+                        data-item-name="Signature Crest T-Shirt">+</button>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
     <!-- Footer Section -->
     <footer class="site-footer">
         <div class="footer-accordions">
-            <!-- Customer Care Section -->
             <div class="footer-section">
                 <div class="footer-header" onclick="toggleFooterAccordion('customerCare', 'customerCareArrow')">
                     <span>Customer Care</span>
@@ -817,7 +1056,6 @@
                 </ul>
             </div>
 
-            <!-- Brand Section -->
             <div class="footer-section">
                 <div class="footer-header" onclick="toggleFooterAccordion('brandSection', 'brandArrow')">
                     <span>Brand</span>
@@ -830,7 +1068,6 @@
                 </ul>
             </div>
 
-            <!-- Social Section -->
             <div class="footer-section">
                 <div class="footer-header" onclick="toggleFooterAccordion('socialSection', 'socialArrow')">
                     <span>Social</span>
@@ -846,7 +1083,6 @@
             </div>
         </div>
 
-        <!-- Legal Links -->
         <div class="footer-legal">
             <a href="#terms">Terms & Conditions</a>
             <a href="#privacy">Privacy Policy</a>
@@ -855,7 +1091,6 @@
             <a href="#cookie-preferences">Cookie Preferences</a>
         </div>
 
-        <!-- Copyright -->
         <div class="footer-bottom">
             <p>&copy; 2026 STATIC FORM. ALL RIGHTS RESERVED.</p>
         </div>
@@ -910,3 +1145,4 @@
 
 </body>
 </html>
+
