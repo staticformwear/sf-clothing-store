@@ -472,6 +472,59 @@
             opacity: 0.6;
         }
 
+        /* Summer Promo Section Styles */
+        .summer-promo-section {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: flex-end;
+            padding: 60px 30px;
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('IMG_0179.png') center/cover no-repeat;
+            background-color: #f0f0f0;
+            margin-bottom: 0;
+        }
+
+        .promo-content {
+            max-width: 600px;
+        }
+
+        .promo-subtitle {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .promo-title {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .promo-button {
+            display: inline-block;
+            background-color: transparent;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            padding: 12px 28px;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+            cursor: pointer;
+        }
+
+        .promo-button:hover {
+            opacity: 0.85;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
         /* Footer Styles */
         .site-footer {
             border-top: 1px solid var(--border-color);
@@ -906,6 +959,15 @@
                         data-item-name="Signature Baseball Cap">+</button>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- New Summer Hero Section -->
+    <section class="summer-promo-section">
+        <div class="promo-content">
+            <span class="promo-subtitle">Explore</span>
+            <h2 class="promo-title">Summer '26</h2>
+            <a href="#shop" class="promo-button">SHOP NOW</a>
         </div>
     </section>
 
