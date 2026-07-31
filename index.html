@@ -676,6 +676,7 @@
                 <ul class="menu-list">
                     <li class="has-sub" data-target="shopStaticPanel">Shop STATIC FORM <span class="arrow">&gt;</span></li>
                     <li class="has-sub" data-target="shopActivewearPanel">Shop FORM87 ACTIVEWEAR <span class="arrow">&gt;</span></li>
+                    <li class="has-sub" data-target="legalPanel">Legal & Policies <span class="arrow">&gt;</span></li>
                 </ul>
             </div>
 
@@ -810,6 +811,21 @@
                 </div>
                 <ul class="accordion-content" id="activewearOutfits">
                     <li><a href="activewear-outfits.html">All Outfits</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal & Policies Panel -->
+            <div class="menu-panel" id="legalPanel">
+                <div class="menu-header">
+                    <button class="back-btn" onclick="switchPanel('mainPanel')">&larr; Legal & Policies</button>
+                    <button class="close-btn" onclick="toggleMenu()">&times;</button>
+                </div>
+                <ul class="menu-list">
+                    <li><a href="terms.html" style="color: inherit; text-decoration: none; width: 100%;">Terms & Conditions</a></li>
+                    <li><a href="privacy.html" style="color: inherit; text-decoration: none; width: 100%;">Privacy Policy</a></li>
+                    <li><a href="shipping-policy.html" style="color: inherit; text-decoration: none; width: 100%;">Shipping & Returns Policy</a></li>
+                    <li><a href="cookie-policy.html" style="color: inherit; text-decoration: none; width: 100%;">Cookie Policy</a></li>
+                    <li><a href="#cookie-preferences" style="color: inherit; text-decoration: none; width: 100%;">Cookie Preferences</a></li>
                 </ul>
             </div>
 
@@ -1025,10 +1041,10 @@
 
         <!-- Legal Links -->
         <div class="footer-legal">
-            <a href="#terms">Terms & Conditions</a>
-            <a href="#privacy">Privacy Policy</a>
-            <a href="#shipping-policy">Shipping & Returns Policy</a>
-            <a href="#cookie-policy">Cookie Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="shipping-policy.html">Shipping & Returns Policy</a>
+            <a href="cookie-policy.html">Cookie Policy</a>
             <a href="#cookie-preferences">Cookie Preferences</a>
         </div>
 
