@@ -555,3 +555,13 @@ header {
     text-transform: uppercase;
     color: #737373;
 }
+
+/* Snipcart & Dynamic Page Additions */
+.category-grid .product-card {
+    flex: unset;
+    width: 100%;
+}
+
+.category-grid .product-image-container {
+    height: 350px;
+}
